@@ -18,12 +18,10 @@ const Home = () => {
 		<>
 			<Container>
 				<section className="">
-					<ul className="flex items-center justify-center gap-3 text-sm md:text-base">
+					<ul className="hidden md:flex items-center justify-center gap-3 text-sm md:text-base">
 						<li
 							className={`capitalize font-semibold cursor-pointer 
-              ${
-								categoryFilter === "all" ? "text-slate-950" : "text-slate-500"
-							}
+              ${categoryFilter === "all" ? "text-slate-950" : "text-slate-500"}
               `}
 							onClick={() => setCategoryFilter("all")}
 						>
@@ -32,6 +30,33 @@ const Home = () => {
 						{filterDublicateCategory.map((category, i) => (
 							<li
 								className={`capitalize font-semibold cursor-pointer ${
+									categoryFilter === category
+										? "text-slate-950"
+										: "text-slate-500"
+								}`}
+								key={category}
+								onClick={() => setCategoryFilter(category)}
+							>
+								{category}
+							</li>
+						))}
+					</ul>
+
+					<ul
+						className=" flex md:hidden gap-3 overflow-x-scroll text-sm md:text-base"
+						id="scrollCustom"
+					>
+						<li
+							className={`capitalize font-semibold cursor-pointer inline-block text-lg
+              							${categoryFilter === "all" ? "text-slate-950" : "text-slate-500"}
+              						  `}
+							onClick={() => setCategoryFilter("all")}
+						>
+							All
+						</li>
+						{filterDublicateCategory.map((category, i) => (
+							<li
+								className={`capitalize font-semibold cursor-pointer inline-block text-lg ${
 									categoryFilter === category
 										? "text-slate-950"
 										: "text-slate-500"
