@@ -43,11 +43,11 @@ const Home = () => {
 					</ul>
 
 					<ul
-						className=" flex md:hidden gap-3 overflow-x-scroll text-sm md:text-base"
+						className=" flex md:hidden gap-3 overflow-x-scroll text-lg md:text-base"
 						id="scrollCustom"
 					>
 						<li
-							className={`capitalize font-semibold cursor-pointer inline-block text-lg
+							className={`capitalize font-semibold cursor-pointer inline-block
               							${categoryFilter === "all" ? "text-slate-950" : "text-slate-500"}
               						  `}
 							onClick={() => setCategoryFilter("all")}
@@ -56,7 +56,7 @@ const Home = () => {
 						</li>
 						{filterDublicateCategory.map((category, i) => (
 							<li
-								className={`capitalize font-semibold cursor-pointer inline-block text-lg ${
+								className={`capitalize font-semibold cursor-pointer inline-block ${
 									categoryFilter === category
 										? "text-slate-950"
 										: "text-slate-500"
